@@ -11,6 +11,7 @@ function Menu() {
       borderBottom: '1px solid #2c2c2c'
     }}>
       <Link to="/" style={{ color: '#00bcd4', fontWeight: 'bold' }}>Inicio</Link>
+      <Link to="/favoritos" style={{ color: '#00bcd4', fontWeight: 'bold' }}>Favoritos ⭐</Link>
       <Link to="/usuario" style={{ color: '#00bcd4', fontWeight: 'bold' }}>Perfil</Link>
     </nav>
   );

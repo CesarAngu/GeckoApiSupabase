@@ -2,14 +2,15 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './contexto/contexto';
 import { supabase } from './supabase';
+
+// Componentes
 import Administrador from './Componentes/Administrador';
-
-
 import Lista from './Componentes/Lista';
 import Login from './Componentes/Login';
 import Registro from './Componentes/Registro';
 import Usuario from './Componentes/Usuario';
 import Menu from './Componentes/Menu';
+import Favoritos from './Componentes/Favoritos'; // ✅ Nuevo componente importado
 
 function App() {
   const [usuario, setUsuario] = useState(null);
@@ -41,6 +42,7 @@ function App() {
           <Route path="/registro" element={<Registro />} />
           <Route path="/usuario" element={usuario ? <Usuario /> : <Navigate to="/login" />} />
           <Route path="/admin" element={usuario ? <Administrador /> : <Navigate to="/login" />} />
+          <Route path="/favoritos" element={usuario ? <Favoritos /> : <Navigate to="/login" />} /> {/* ✅ Nueva ruta */}
         </Routes>
       </Router>
     </AppProvider>
